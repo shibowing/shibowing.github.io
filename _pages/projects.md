@@ -1,13 +1,15 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description:
 nav: true
 nav_order: 2
 display_categories: [work, fun]
 horizontal: false
 ---
+
+ **It is still under construction. Please check my projects in the the [super odometry website](https://superodometry.com/). Thank you! :-D**
 
 <!-- pages/projects.md -->
 <div class="projects">
