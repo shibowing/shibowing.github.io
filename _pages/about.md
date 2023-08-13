@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <a href='https://www.ri.cmu.edu/'> Contact </a>  shiboz@andrew.cmu.edu  
+subtitle: Research on Localization and Perception
 redirect: /assets/pdf/example_pdf.pdf
 
 profile:
@@ -19,7 +19,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hello! I am the third year PhD student at Robotics Institute, School of Computer Science at Carnegie Mellon University, advised by  <a href='https://scholar.google.com/citations?user=gxoPfIYAAAAJ&hl=de'> Professor. Sebastian Scherer</a>. 
+Hello! I will become the third year PhD student at Robotics Institute, School of Computer Science at Carnegie Mellon University, advised by  <a href='https://scholar.google.com/citations?user=gxoPfIYAAAAJ&hl=de'> Professor. Sebastian Scherer</a>. 
 
 I am grateful to have wonderful mentors including <a href='http://www.cs.cmu.edu/~kaess/'> Professor. Michael Kaess</a> and <a href='https://frc.ri.cmu.edu/~zhangji/'> Professor. Ji Zhang</a>.
 

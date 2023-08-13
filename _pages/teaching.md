@@ -9,7 +9,7 @@ nav_order: 5
 
 ### Teaching
 
-I collabrated with [Prof. Shubham Tulsiani](https://shubhtuls.github.io/) and excited to become the TA for [learning for 3D](https://learning3d.github.io/). 
+> I collabrated with [Prof. Shubham Tulsiani](https://shubhtuls.github.io/) and excited to be a TA for [learning for 3D](https://learning3d.github.io/). 
 
 
 ### Reviewer
