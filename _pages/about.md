@@ -19,7 +19,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hello! I will become the third year PhD student at Robotics Institute, School of Computer Science at Carnegie Mellon University, advised by  <a href='https://scholar.google.com/citations?user=gxoPfIYAAAAJ&hl=de'> Professor. Sebastian Scherer</a>. 
+Hello! I will become the fourth year PhD student at Robotics Institute, School of Computer Science at Carnegie Mellon University, advised by  <a href='https://scholar.google.com/citations?user=gxoPfIYAAAAJ&hl=de'> Professor. Sebastian Scherer</a>. 
 
 I am grateful to have wonderful mentors including <a href='http://www.cs.cmu.edu/~kaess/'> Professor. Michael Kaess</a> and <a href='https://frc.ri.cmu.edu/~zhangji/'> Professor. Ji Zhang</a>.
 
