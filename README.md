@@ -187,6 +187,82 @@ Medical Robotics Junior Faculty Forum (ISMR: <a href="https://junior-forum-ismr.
 Want to learn more about Jekyll? Check out [this tutorial](https://www.taniarascia.com/make-a-static-website-with-jekyll/).
 Why Jekyll? Read [Andrej Karpathy's blog post](https://karpathy.github.io/2014/07/01/switching-to-jekyll/)!
 
+### Quick Start (Recommended)
+
+The easiest way to run this website is using Docker. Follow these steps:
+
+#### Method 1: Docker (Recommended)
+
+1. **Make sure Docker is installed on your system**
+2. **Run the website:**
+   ```bash
+   docker run --rm -it -p 4000:4000 -v $(pwd):/srv/jekyll jekyll/jekyll:latest bash -c "cd /srv/jekyll && bundle install && bundle exec jekyll serve --host 0.0.0.0 --port 4000 --incremental"
+   ```
+3. **Open your browser and go to:** `http://localhost:4000`
+
+#### Method 2: GitHub Pages (Production)
+
+1. **Push your changes to GitHub:**
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git push origin master
+   ```
+2. **Your site will be live at:** `https://shibowing.github.io`
+
+#### Method 3: Local Installation (Alternative)
+
+If you prefer to run it locally:
+
+1. **Install Ruby and Jekyll:**
+   ```bash
+   sudo apt-get update
+   sudo apt-get install ruby-full build-essential zlib1g-dev
+   sudo gem install jekyll bundler
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   bundle install
+   ```
+
+3. **Run the server:**
+   ```bash
+   bundle exec jekyll serve --host 0.0.0.0 --port 4000
+   ```
+
+4. **Open your browser and go to:** `http://localhost:4000`
+
+### Troubleshooting
+
+If you encounter issues:
+
+1. **Clear cache and try again:**
+   ```bash
+   rm -rf .jekyll-cache _site vendor Gemfile.lock
+   ```
+
+2. **Fix permissions:**
+   ```bash
+   sudo chown -R $USER:$USER .
+   ```
+
+3. **Check if the site is building properly:**
+   ```bash
+   bundle exec jekyll build
+   ```
+
+### Customization
+
+After getting the site running, you can customize it by editing:
+- `_config.yml` - Main configuration
+- `_pages/about.md` - Your about page
+- `_posts/` - Blog posts
+- `assets/img/` - Images
+- `_sass/` - Styling
+
+---
+
 ### Installation
 
 For a hands-on walkthrough of al-folio installation, check out [this cool video tutorial](https://www.youtube.com/watch?v=g6AJ9qPPoyc) by one of the community members! 🎬 🍿
