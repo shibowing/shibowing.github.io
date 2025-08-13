@@ -3,41 +3,41 @@ layout: about
 title: About
 permalink: /
 subtitle: Research on Localization and Perception
-redirect: /assets/pdf/example_pdf.pdf
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: false
   address: >
-    <p>PhD student @RI,SCS,CMU</p>
+    <p>PhD Candidate in Robotics</p>
+    <p>Robotics Institute</p>
+    <p>Carnegie Mellon University</p>
     <p>shiboz[at]andrew[dot]cmu[dot]edu</p>
 
-news: true  # includes a list of news items
-latest_posts: true  # includes a list of the newest posts
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true  # includes social icons at the bottom of the page
+news: true
+latest_posts: true
+selected_papers: true
+social: true
 ---
 
-Hello! I will become the fourth year PhD student at Robotics Institute, School of Computer Science at Carnegie Mellon University, advised by  <a href='https://scholar.google.com/citations?user=gxoPfIYAAAAJ&hl=de'> Professor. Sebastian Scherer</a>. 
+**Shibo Zhao** is a PhD candidate at Carnegie Mellon University's Robotics Institute, advised by [Professor Sebastian Scherer](https://scholar.google.com/citations?user=gxoPfIYAAAAJ&hl=de). 
 
-I am grateful to have wonderful mentors including <a href='http://www.cs.cmu.edu/~kaess/'> Professor. Michael Kaess</a> and <a href='https://frc.ri.cmu.edu/~zhangji/'> Professor. Ji Zhang</a>.
+**Research Focus:** My research focuses on Simultaneous Localization and Mapping (SLAM) and 3D reconstruction in challenging environments, with particular emphasis on extreme conditions and multi-modal sensor fusion.
 
-Before coming to CMU, I was supervised by Professor Zheng Fang and received my Master's degree from Northeastern University.
+**Key Contributions:**
+- **Super Odometry**: Developed a robust IMU-centric LiDAR-visual-inertial estimator for challenging environments
+- **SubT-MRS Dataset**: Created a comprehensive dataset pushing SLAM towards all-weather environments (CVPR 2024)
+- **Thermal-Inertial Odometry**: Pioneered TP-TIO, a robust thermal-inertial odometry system
 
-I was served as a SLAM investigator of Team Explorer competing in the DARPA Subterranean Challenge. I developed [Super Odometry](https://superodometry.com/) for Team Exlporer, which are adopted as important methods to acheive state estimation. I was also main organizer for 
-[Tartan SLAM Series ](https://theairlab.org/tartanslamseries/) and  [ICCV Robot Learning and SLAM WorkShop](https://superodometry.com/iccv23).
+**Leadership & Service:**
+- Main organizer for [Tartan SLAM Series](https://theairlab.org/tartanslamseries/)
+- Co-organizer for [ICCV Robot Learning and SLAM Workshop](https://superodometry.com/iccv23)
+- SLAM investigator for Team Explorer in DARPA Subterranean Challenge
 
-I am focusing on the simultaneous localization and mapping (SLAM) and 3D recontruction in challenging environments. 
+**Education:**
+- PhD in Robotics, Carnegie Mellon University (2020-Present)
+- MS in Robotics, Northeastern University (2018-2020)
 
-**For more details about my research, please visit [superodometry.com](https://superodometry.com/)**
+**[CV](assets/pdf/Shibo_Latest_CV_2025.pdf) | [Research Statement](/research/)**
 
-<!-- 
-**You can also download my <a href="" target="_blank">[CV]</a> here :-D** -->
-
-
-<!-- Write your biography here. Tell the world about yourself. Link to your favorite . You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
-
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
+For more details about my research, please visit [superodometry.com](https://superodometry.com/)
