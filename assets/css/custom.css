@@ -1,0 +1,43 @@
+/* Custom CSS for wider layout */
+.container {
+    max-width: 1400px !important;
+    width: 100%;
+}
+
+.row {
+    max-width: 1400px !important;
+}
+
+.col {
+    max-width: 1400px !important;
+}
+
+/* Make content sections wider */
+.about {
+    max-width: 1400px !important;
+}
+
+/* Ensure proper spacing for single page layout */
+section {
+    margin-bottom: 3rem;
+}
+
+/* Style section headers like Shijie's */
+h2 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+/* Make publication entries wider */
+.publication {
+    margin-bottom: 2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100% !important;
+    }
+}
