@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shibo Zhao</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Shibo Zhao is a PhD student at MIT.">
+    <meta name="keywords" content="Shibo Zhao,Computer Vision,Natural Language Processing,Machine Learning,Cognitive Science">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="static/img/favicon.ico">
+
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+/* Color Scheme: Orange / Yellow */
+:root {
+    --background-color: #fefbf5;
+    --highlight-color: #b6274e;
+    --main-color: #684e43;
+    --link-color: #86985c;
+    --link-color-hover: #8e6e29;
+    --secondary-link-color: #6d8436;
+    --secondary-link-border-color: #a5af97;
+    --secondary-content-background-color: #fffefc;
+    --link-button-background-color: #fffdfa;
+    /* a8826c 324d67 */
+}
+/* Color Scheme: Blue / Summer */
+:root {
+    /* --background-color: #f5fbfe; */
+    --background-color: #f5fbf7;
+    --highlight-color: #b6274e;
+    --main-color: #225573;
+    --link-color: #547b5b;
+    --link-color-hover: #292c1f;
+    --secondary-link-color: #6d8436;
+    --secondary-link-border-color: #7d99b1;
+    --secondary-content-background-color: #feffff;
+    --link-button-background-color: #fafdff;
+    /* a8826c 324d67 */
+}
+/* Color Scheme: NYC Flower */
+:root {
+    /* --background-color: #f5fbfe; */
+    --background-color: #FCFAF1;
+    --highlight-color: #b6274e;
+    --main-color: #3F6139;
+    --link-color: #ad4b73;
+    --link-color-hover: #292c1f;
+    --secondary-link-color: #6d8436;
+    --secondary-link-border-color: #7d99b1;
+    --secondary-content-background-color: #feffff;
+    --link-button-background-color: #fafdff;
+    /* a8826c 324d67 */
+}
+/* Color Scheme: NYC Flower Blue */
+:root {
+    /* --background-color: #f5fbfe; */
+    --background-color: #f8f9fa;
+    --highlight-color: #b6274e;
+    --main-color: #394661;
+    --link-color: #427e3e;
+    --link-color-hover: #292c1f;
+    --secondary-link-color: #845836;
+    --secondary-link-border-color: #7d99b1;
+    --secondary-content-background-color: #feffff;
+    --link-button-background-color: #fafdff;
+    /* a8826c 324d67 */
+}
+
+body{margin:0;padding:0;}
+a{color:var(--link-color)}
+a:hover{color:var(--link-color-hover);cursor:pointer}
+#background{position:fixed;top:0;overflow:hidden;height:0}
+#wave-canvas{display:block;position:relative;top:0;left:5%;width:55%;min-width:850px;height:150px;border:0}
+/*#main{z-index:2;margin:0 auto;position:absolute;padding-top:5%;width:100%;min-width:240px;text-align:center;background-color:rgb(254,250,246)}*/
+#main{margin:0 auto 30px;padding:45px 30px 15px;width:100%;min-width:240px;text-align:center;background-color:var(--background-color)}
+.highlight{color:var(--highlight-color);font-weight:600}
+.highlight:hover{color:var(--highlight-color);font-weight:600}
+
+.profile-pendant {display:none;bottom:-15px;right:-200px;position:absolute}
+@media (min-width: 768px) { .profile-pendant {display:block} }
+@media (max-width: 767px) { .profile-pendant {display:none} }
+
+.main-content{padding:0;text-align:center;cursor:default;text-align:center;}
+/*.main-content{background:rgba(238,238,238,0.95);padding:0;text-align:center;cursor:default;text-align:center;}*/
+/*.main-content{margin-left:6.5104167%;width:86.9791667%;}*/
+@media (min-width: 768px) {.main-content{width:66%;min-width:668px;margin:auto;}}
+@media (min-width: 1200px) {.main-content{width:66%;max-width:1080px;margin:auto;}}
+
+/* Avatar, Name, etc. */
+#main-content-container{margin:0 auto;padding:15px 0 0;max-width:1080px;}
+@media (min-width: 768px) { #main-content-container{padding:15px 0 0;} }
+#main-content-container .col-avatar{text-align:center;min-width:220px;}
+@media (min-width: 768px) { #main-content-container .col-avatar{text-align:center} }
+/* Commented out old avatar styling - now using avatar-wrapper */
+/* #main-content-container .col-avatar .avatar{z-index:100;width:200px;height:200px;border-radius:100%;box-shadow:0 0 0 0.3em #eee;opacity:1;} */
+/* @media (min-width: 1200px) { #main-content-container .col-avatar .avatar{margin-bottom:-50px} } */
+
+#main-content-container .col-info{height:100%;align-items:center;}
+#main-info-container{padding-top:15px}
+#main-info-container .col-name{text-align:center;margin-top:30px}
+@media (min-width: 768px) { #main-info-container .col-name{text-align:left;margin-top:0;}
+}
+#main-info-container .col-name .text{text-align:left;margin-bottom:0.5rem;}
+#main-info-container .col-name .name{color:var(--main-color);font-size:1.85em;font-family:"Source Sans Pro",Helvetica,sans-serif}
+#main-info-container .col-name .email{color:#333;font-size:16px}
+#main-info-container .col-link{text-align:center;margin:-5px 0 -25px;}
+#main-info-container .col-link ul {margin:0px auto auto;padding:0;list-style:none;text-align:center}
+#main-info-container .col-link li {display:inline-block;margin:auto;padding:0 10px;color:#ccc;line-height:10px}
+#main-info-container .col-link li a{width:45px;height:45px;color:#ccc;padding:0;font-size:45px;line-height:45px}
+#main-info-container .col-link li a:focus,
+#main-info-container .col-link li a:hover{text-decoration:none;cursor:hand}
+#main-info-container .col-link li a.border{border:1px solid #ccc;border-radius:100%;}
+#main-info-container .col-link li a.padding{padding:0px 0px;font-size:22px}
+
+/* Other */
+.content-container{width:100%;padding:0 30px}
+.main-news-container{margin:auto;padding: 0 0em;max-width:1080px;text-align:left;padding-top:30px;max-width:1080px;font-size:1rem;line-height:1.4}
+@media (min-width: 1200px) { .main-news-container{padding-top:20px;} }
+.main-news-container .subtitle{margin-top:0px;color:var(--main-color)}
+.main-news-container .news-list{margin-bottom:0rem}
+
+#news-more{margin-top:0rem}
+#news-more-button{margin-left:40px;margin-top:0.5rem;}
+
+section.overview ul,section.overview li,section.overview h3,section.overview h1,section.overview p{margin:0;padding:0}
+section.overview h1{font-weight:700}
+section.overview li{font-weight:400;list-style:none}
+.join,.up::after,.down::before{background-position:50% 50%}
+.up::after,.down::before{background-repeat:no-repeat;content:"";display:block;height:20px}
+.up::after{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3IiBoZWlnaHQ9IjQiIHZpZXdCb3g9IjAgMCA3IDQiPjxwYXRoIGZpbGw9IiM1NjZjN2YiIGQ9Ik0xIDRWM2gxVjJoM3YxaDF2MWgxVjJINlYxSDVWMEgydjFIMXYxSDB2MiIvPjwvc3ZnPg==)}
+.down::before{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI3cHgiIGhlaWdodD0iNHB4IiB2aWV3Qm94PSIwIDAgNyA0IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA3IDQiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIGZpbGw9IiM1NjZjN2YiIHBvaW50cz0iNiwwIDYsMSA1LDEgNSwyIDIsMiAyLDEgMSwxIDEsMCAwLDAgMCwyIDEsMiAxLDMgMiwzIDIsNCA1LDQgNSwzIDYsMyA2LDIgNywyIDcsMCAiLz48L3N2Zz4=)}
+.join{background-repeat:repeat-y;background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxcHgiIGhlaWdodD0iMXB4IiB2aWV3Qm94PSIwIDAgMSAxIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxIDEiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiM1NjZjN2YiIGQ9Ik0wLDBoMXYxSDBWMHoiLz48L3N2Zz4=)}
+.thin,.thick{background:#ffffff}
+.thin{border:1px solid var(--secondary-link-border-color);padding:.5em}
+.main{text-align:center}
+.main ul{display:block;width:150px;margin:1em auto 0}
+ul.row{width:100%;display:flex;align-items:flex-start}
+ul.row li.page{flex:1;margin:0 .5em;min-width:280px}
+ul.row li.page.stretch{align-self:stretch}
+ul.row li.page:first-child{margin-left:0}
+ul.row li.page:last-child{margin-right:0}
+ul.row li.page h3 + ul.content{margin-top:1.5em}
+ul.row li.page ul.content li{border-top:1px solid var(--secondary-link-border-color);padding:2px 5px}
+ul.row li.page ul.content li.level-2{padding:2px 12px}
+ul.row li.page ul.content li ul.section li{border-top:none;padding:0}
+ul.row li.page ul.content li ul.section li:before{content:"― "}
+section.overview{background:var(--secondary-content-background-color);transition:max-width 400ms ease-in-out;padding:20px;margin:auto;z-index:99}
+section.overview .thin h3{will-change:auto;transition:transform 400ms ease-in-out;transform-origin:0 50%}
+section.overview .thin b{display:block;padding:2px 5px}
+section.overview .thin ul.content{transition:opacity 200ms ease;opacity:1}
+@media (max-width: 1480px) { ul.row li.page{margin:0} }
+
+.toggle-overview {background:var(--background-color);display:block;text-align:center;padding:5px;color:var(--main-color);font-weight:500}
+.toggle-overview:hover {text-decoration:none}
+/* @media (max-width: 560px) {section.overview {display:none}} */
+.thick{border:3px solid var(--secondary-link-border-color);padding:.5em;font-size:1.25rem}
+.thick>b{color:var(--main-color)}
+.thick>p{font-size: 1rem}
+.thick>p>a, .think>p>a:hover {background:var(--link-button-background-color);display:block;text-align:center;padding:5px;color:var(--main-color);font-weight:500;text-decoration:none}
+
+#pub-container{margin:auto;padding: 0 0em;max-width:1080px;text-align:left;padding-top:30px;max-width:1080px}
+#pub-container .subtitle{color:var(--main-color);}
+#pub-container .subtitle a {font-size:18px; color: var(--secondary-link-color); font-weight:400}
+#pub-container .subtitle a.activated {color:#333333; font-weight:600}
+#pub-container .subtitle a.activated:focus,
+#pub-container .subtitle a.activated:hover {text-decoration:none;cursor:initial}
+
+#pub-container .subtitle-aux {font-size:1rem}
+#pub-container .subtitle-aux a.activated {color:#333333}
+#pub-container .subtitle-aux a.activated:focus,
+#pub-container .subtitle-aux a.activated:hover {text-decoration:none;cursor:initial}
+#pub-container .subtitle-aux .note{margin-left:1em;color:#999999;text-decoration:none;font-size:14px}
+
+#pub-card-container {
+    margin-top: 2rem;
+}
+
+#pub-card-container > h5 {
+    margin-bottom: 1.5rem;
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+#pub-card-container .pub-card {
+    width: 100%;
+    padding: 1.5rem 0;
+    font-size: 1rem;
+    background: transparent;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+#pub-card-container .pub-card:last-child {
+    border-bottom: none;
+}
+
+#pub-card-container .pub-card .col-l {
+    text-align: center;
+    padding-top: 10px;
+}
+
+#pub-card-container .pub-card .col-r {
+    padding-top: 10px;
+}
+
+@media (min-width: 768px) {
+    #pub-card-container .pub-card .col-l {
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
+    #pub-card-container .pub-card .col-r {
+        flex: 0 0 70%;
+        max-width: 70%;
+    }
+}
+
+#pub-card-container .pub-card img {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#pub-card-container .pub-card video {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#pub-card-container .pub-card-body {
+    width: 100%;
+    background: transparent;
+    padding-left: 0px;
+}
+
+#pub-card-container .pub-card .title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+    color: var(--main-color);
+}
+
+#pub-card-container .pub-card .authors {
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+#pub-card-container .pub-card .authors a {
+    color: var(--text-muted);
+}
+
+#pub-card-container .pub-card .authors u {
+    color: var(--main-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#pub-card-container .pub-card .conference {
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    border: 1px solid #e2e8f0;
+}
+
+#pub-card-container .pub-card .note {
+    display: block;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    padding: 0.25rem 0;
+}
+
+#pub-card-container .pub-card .info {
+    margin-bottom: 0;
+}
+
+#pub-card-container .row {
+    margin: 0;
+}
+
+#pub-card-container .col-l,
+#pub-card-container .col-r {
+    vertical-align: top;
+    display: inline-block;
+    margin: 0;
+    padding-left: 0px;
+}
+
+#footer{padding:0 0 1.5em;margin-top:2rem;min-width:240px;background:#fff;font-size:14px;line-height:12px;text-align:left;background:var(--background-color)}
+/* #footer{padding:0 0 0.5em;margin-top:2rem;min-width:240px;background:#fff;font-size:14px;line-height:12px;text-align:left;min-height:80px;} */
+/* #footer{background:url(static/img/loong/loong-bottom-summer-repeat.png); background-size: 15px 15px; background-repeat: repeat;} */
+#footer .container{max-width:540px;padding:0 45px;position:relative}
+#footer .row{align-items:center}
+#footer .comic{padding-right:15px;padding-top:15px;}
+#footer .copyright{flex-grow:1;margin:25px auto 5px;text-align:center;display:block;font-size:1rem;line-height:1.4;color:var(--main-color)}
+#footer .stat{width:60px;height:60px;overflow:hidden;margin:0 auto 5px;padding: 0;}
+@media (min-width: 420px){ #footer .stat{display:block;width:60px;height:60px;overflow:hidden;margin:5px auto -25px;padding-right:15px;} }
+#footer a{color:#666666}
+#footer a:hover{color:#333333}
+
+.bold{font-weight:600}
+.hide{display:none}
+
+/* Navigation Bar Styles */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: var(--highlight-color) !important;
+}
+
+.nav-link {
+    font-weight: 500;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--link-color-hover) !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--highlight-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--highlight-color) !important;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        text-align: center;
+        padding-top: 1rem;
+    }
+    
+    .nav-link {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Adjust main content to account for fixed navbar */
+#main {
+    margin-top: 0;
+    padding-top: 20px;
+}
+
+/* Avatar Styling */
+.avatar-wrapper {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    border: 4px solid var(--background-color);
+    margin: 10px auto 15px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.avatar-wrapper:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+}
+
+.avatar-wrapper .avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+}
+
+@media (min-width: 1200px) { 
+    .avatar-wrapper {
+        margin-bottom: -30px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .avatar-wrapper {
+        width: 200px;
+        height: 200px;
+        margin: 15px auto;
+    }
+}
+
+/* Social Links Styling */
+.social-links {
+    margin-top: 20px !important;
+    position: relative;
+    z-index: 1;
+}
+
+.social-links a:hover {
+    color: var(--highlight-color) !important;
+    transform: translateY(-2px);
+}
+
+.social-links a {
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 767px) {
+    .social-links {
+        margin-top: 15px !important;
+    }
+    .social-links a {
+        font-size: 18px !important;
+        margin: 0 6px !important;
+    }
+}
+
+/* Year Header Styling */
+.year-header {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--main-color);
+    margin: 2rem 0 1rem 0;
+    padding: 0.75rem 0;
+    border-bottom: 2px solid #e2e8f0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.year-header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 60px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 1px;
+}
+
+.year-header .year-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #6b7280;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+    .year-header {
+        font-size: 1.5rem;
+        margin: 1.5rem 0 0.75rem 0;
+    }
+    
+    .year-header .year-number {
+        font-size: 1.8rem;
+    }
+}
+
+/* Visitor Counter Styling */
+.visitor-counter {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.visitor-counter i {
+    color: var(--highlight-color);
+    font-size: 0.8rem;
+}
+
+.visitor-counter #visitor-count {
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+@media (max-width: 768px) {
+    .visitor-counter {
+        font-size: 0.8rem;
+        margin-top: 6px;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--background-color); border-bottom: 1px solid var(--secondary-link-border-color);">
+    <div class="container">
+        <a class="navbar-brand" href="#main" style="color: var(--main-color); font-weight: 600;">Shibo Zhao</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#main" style="color: var(--link-color);">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#overview" style="color: var(--link-color);">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#publications" style="color: var(--link-color);">Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="blog.html" style="color: var(--link-color);">Blog</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--img src="static/img/hal-gatewood.jpg" id="background" class="" /-->
+
+<div id="main">
+    <!--canvas id="wave-canvas"></canvas-->
+
+    <div class="main-content">
+        <div id="main-content-container" class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-3 col-avatar">
+                    <div class="avatar-wrapper">
+                        <img src="static/img/shibo.png" class="avatar" alt="Shibo Zhao" />
+                    </div>
+                    <!-- Social Media and Academic Links -->
+                    <div class="social-links" style="text-align: center;">
+                        <a href="mailto:shiboz@andrew.cmu.edu" title="Email" style="display: inline-block; margin: 0 8px; color: var(--link-color); font-size: 20px; transition: all 0.3s ease;">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/shibowing" target="_blank" title="GitHub" style="display: inline-block; margin: 0 8px; color: var(--link-color); font-size: 20px; transition: all 0.3s ease;">
+                            <i class="fa fa-github"></i>
+                        </a>
+                        <a href="https://x.com/ShiboZhaoSLAM" target="_blank" title="Twitter" style="display: inline-block; margin: 0 8px; color: var(--link-color); font-size: 20px; transition: all 0.3s ease;">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=dCGZsPkAAAAJ&hl=en" target="_blank" title="Google Scholar" style="display: inline-block; margin: 0 8px; color: var(--link-color); font-size: 20px; transition: all 0.3s ease;">
+                            <i class="fa fa-graduation-cap"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-8">
+                    <div id="main-info-container">
+                        <!--div class="profile-pendant" style="bottom:-100px;right:-200px;position:absolute"><img src="static/img/rabbit.png" width=200px; height="200px" /></div-->
+                        <!--div class="profile-pendant"><img src="static/img/loong/loong-summer.png" height=200px; /></div-->
+                        <div class="col-name">
+                            <h1 class="name"><span>Shibo Zhao</span></h1>
+                            <p class="email"><span style="margin-right:1em">Email: shiboz@andrew.cmu.edu</span> Links: <a href="document/Shibo_Latest_CV_20250813.pdf">CV</a> | <a href="document/Shibo_Research_Statement.pdf">Research Statement</a></p>
+                            I will be 5th year PhD candidate at <a target="_blank" href="https://www.ri.cmu.edu/">CMU Robotics Institute</a>, advised by
+                            Prof. <a target="_blank" href="https://www.ri.cmu.edu/ri-faculty/sebastian-scherer/"> Sebastian Scherer</a>.
+
+                            <p class="text">I am also grateful to have wonderful mentors including <a href='http://www.cs.cmu.edu/~kaess/'> Professor. Michael Kaess</a> and <a href='https://frc.ri.cmu.edu/~zhangji/'> Professor. Ji Zhang</a>.
+                            My research interests include 3D computer vision and robotics. Currently, I am focusing on building spatial intelligence system for robotics, which incorporates a adaptive sensor fusion framework for robust state
+                            estimation, a 4D scene representation with flexible levels of detail, and scene reasoning to support VLA navigation.
+                            I developed <a href="https://superodometry.com/" target="_blank">Super Odometry</a> , which is adopted as major methods in various CMU projects to achieve state estimation such as <a href="https://www.defense.gov/Multimedia/Experience/Subterranean-Challenge/" target="_blank">DARPA Subterranean Challenge</a>. 
+                            I am currently a Research Intern at Apple. <span style="color: red; font-weight: bold;">I am on the job market and actively seeking full-time research scientist/engineer opportunities starting in 2026.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-content">
+    <div class="content-container">
+        <div class="main-news-container">
+            <h5 class="subtitle">News</h5>
+            <ul class="news-list">
+                <li><span style="background-color: #fff3cd; padding: 2px 6px; border-radius: 3px; font-weight: 500;">
+                I am the organizer of <a href="https://superodometry.com">Open SuperX SLAM</a> for real-time robotics perception and <a href="https://theairlab.org/tartanslamseries/">Tartan SLAM series</a> to invite speakers to share insights. Feel free to reach out if you are interested in my work and want to collaborate :-).</span></li>
+                <!-- <li>
+                    To junior PhD/master/undergraduate students: if you would like to chat about life, career plan, or research ideas related to AI/CV/robotics, feel free to email me to schedule a meeting.
+                    I will dedicate 30 mins every week for such meetings. 
+                </li> -->
+
+                <li>I was invited to give a talk on IMU Foundation Model <a href="https://sites.google.com/view/icra2024-ws-bi-mp/home"> at Apple </a>Curpertino, USA 2025.</li>
+
+                <li>I was invited as a author to write a chapter in SLAM Handbook<a target="_blank" href="https://github.com/SLAM-Handbook-contributors/slam-handbook-public-release"> "From Localization and Mapping to Spatial Intelligence"</a>, USA 2025 </li>
+
+                <li> 1 paper is accepted at ICLR 2025 and 2 papers are accepted at CVPR 2025 and 5 papers are accepted at ICRA2025.</li>   
+                
+            
+                <li>I'm the organizer of  <a target="_blank" href="https://superodometry.com/datasets"> ICCV23 SLAM Challenge and Workshop on Robot Learning and SLAM,</a> at ICCV 2023.</li>
+
+                <li>I was the organizer of  <a target="_blank" href="https://theairlab.org/tartanslamseries/"></a>Tartan SLAM series</a> at CMU, Robotics Institute, 2022.</li>
+              
+                <li>I developed robotic state estimation and mapping algorithms, which enabled a team of robots to explore kilometer-scale underground environments in the <a href="https://www.defense.gov/Multimedia/Experience/Subterranean-Challenge/" target="_blank">DARPA Subterranean Challenge</a>. I helped the team won <span style="color: #155724; padding: 2px 6px; border-radius: 3px; font-weight: bold;">No.1 in DARPA Tunnel Challenge</span>,<span style="color: #0c5460; padding: 2px 6px; border-radius: 3px; font-weight: bold;">No.2 in DARPA Urban Challenge</span> and <span style="color: #856404; padding: 2px 6px; border-radius: 3px; font-weight: bold;">No.4 in DARPA Final Challenge</span>, USA 2021.</li>
+               
+            </ul>
+            <ul class="news-list" style="display:none" id="news-more">
+
+                <li>I'm co-organizing the <a target="_blank" href="https://sites.google.com/view/ropem/">Robotic Perception and Mapping: Frontier Vision & Learning Techniques at IROS 2023.</li>
+
+                <li>I'm co-organizing the <a target="_blank" href="https://sites.google.com/view/vislocslamcvpr2020/home">Joint Workshop on Long-Term Visual Localization, Visual Odometry and Geometric and Learning-based SLAM</a> at CVPR 2020.</li>
+                <li>Start PhD at CMU, Robotics Institute, advised by Prof. <a target="_blank" href="https://www.ri.cmu.edu/ri-faculty/sebastian-scherer/"> Sebastian Scherer</a>,USA 2021</li>
+            </ul>
+            <a id="news-more-button" href="javascript:toggleNews();" data-expanded="true">Click to show older news ...</a>
+
+            <h5 class="subtitle" style="margin-top:30px">Research Highlights</h5>
+            <p>
+            How can we enable robots to perceive, adapt, and understand their surroundings like
+            humans, in real-time and under uncertainty? Just as humans rely on vision to navigate
+            complex environments, robots need robust and intelligent perception systems, "eyes" that can
+            endure sensor degradation, adapt to changing conditions, and recover from failure. However,
+            today's visual systems are fragile, easily disrupted by occlusion, lighting variation, motion
+            blur, or dynamic scenes. A single sensor dropout or unexpected environmental change can
+            trigger cascading errors, severely compromising autonomy.  My research goal is to develop resilient and intelligent visual perception systems—building the "robust eyes" robots need to thrive in the real world.
+
+            <!-- (<i>e.g.,</i> <a class="highlight">red</a> is a unary function that returns Booleans, actions have Hoare-logic-like preconditions and postconditions), and their structures (<i>e.g.,</i> a push action only changes the pose of one object if being collision-free, a wiping policy has for-loops) -->
+            </p>
+
+<section class="overview" id="overview">
+  <div class="main thick">
+    <b>Robust Spatial Perception: Real-world Data Collection for Spatial Intelligence</b>
+    <p>How to achieve robust robot perception for anywhere and anytime? </p>
+    <p>How to capture high quality and divere data to train the model from real-world (<i> Requires Three Capabilities</i>)?</p>
+    <p><a href="javascript:$('#overview-representation ul.content').slideToggle();">Show/Hide Work on Representations</a></p>
+  </div>
+  <ul class="row" id="overview-representation">
+    <li class="page stretch join up down">
+      <div class="thin">
+        <b>Generalization: How to achieve a unified sensor fusion for different modalities and robots?</b> 
+        <ul class="content hide">
+          <li><i></i>Unified Sensor Fusion: <a target="_blank" href="https://superodometry.com">[Super Odometry, IROS2021]</a></li>
+          <li><i>Multi-robot Deployment</i>:<br><a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/10876072">[Multi-robot Exploration, JFR 2022]</a></li>
+          <!-- <li><i>Logographic Structures</i>:<br /><a target="_blank" href="https://arxiv.org/pdf/2405.06906">[Logographic Library Learning]</a></li> -->
+        </ul>
+      </div>
+      <!--div class="thin" style="margin-top:20px;">
+        <b>Language Pragmatics</b>
+        <ul class="content hide">
+          <li><i>Goal Interpretation</i>: <a target="_blank" href="https://sites.google.com/view/hand-me-that/overview">[HandMeThat]</a></li>
+        </ul>
+      </div-->
+    </li>
+    <li class="page stretch join up down">
+      <div class="thin">
+        <b>Adaptation: How perception system adapts to any enviroments?</b>
+        <ul class="content hide">
+          <li><i>Hierarchical Adaptation</i>:<br /><a href="http://nscl.csail.mit.edu">[Super Odometry2]</a></li>
+          <li class="level-2"> + <i> Visual Uncertainty Estimation</i> <a target="_blank" href="https://www.youtube.com/watch?v=iDAmD-t83Uw">[Multi-spectral Odometry]</a></li>
+          <li class="level-2">+ <i>LiDAR Uncertainty Estimation</i>: <a target="_blank" href="https://superodometry.com/superloc">[SuperLoc,ICRA2025]</a>
+          <li><i>Thermal Odometry</i>:<br /><a target="_blank" href="https://superodometry.com/tptio">[Deep Thermal Features, IROS2020]</a></li>
+          <!-- <li class="level-2">+ <i>Continual Learning</i>: <a target="_blank" href="https://people.csail.mit.edu/jerrymei/projects/falcon/">[FALCON]</a></li>
+          <li><i>Physical Events and Causality</i>: <a target="_blank" href="http://dcl.csail.mit.edu/">[Dynamic Concept Learning]</a>, <a target="_blank" href="https://sites.google.com/stanford.edu/clevrer-humans">[CLEVRER-Humans]</a></li> -->
+          <!-- <li><i>Temporal-Logic Events</i>:<br /><a target="_blank" href="http://toqnet.csail.mit.edu/">[Temporal and Object Quantification]</a></li> -->
+          <!-- <li><i>Abstract Concepts</i>: <a target="_blank" href="https://stanford.edu/~joycj/projects/abstractions_2024.html">[Visual Abstraction]</a></li>
+          <li><i>Programmatic Image Representations</i>:<br /><a target="_blank" href="http://pgim.csail.mit.edu/">[Program-Guided Image Manipulators]</a>
+          <li class="level-2">+ <i>Perspective</i>: <a target="_blank" href="http://p3i.csail.mit.edu/">[P3I]</a></li>
+          <li class="level-2">+ <i>Multi-Plane</i>: <a target="_blank" href="http://bpi.csail.mit.edu/">[Box Program]</a></li>
+          <li><i>Programmatic Human Motion</i>: <a target="_blank" href="https://sumith1896.github.io/motion2prog/">[Motion Program]</a>, <a target="_blank" href="https://sumith1896.github.io/motion-concepts/">[Motion Concept]</a></li> -->
+        </ul>
+      </div>
+    </li>
+    <li class="page stretch join up down">
+      <div class="thin">
+        <b>Scene Understanding: How to understand surrounding environments in real-time?</b>
+        <ul class="content hide">
+          <li><i>Spatial-temporal 4D Mapping</i>: <a target="_blank" href="https://www.youtube.com/watch?v=C0a_-AkIL6w">[Super Map]</a></li>
+          <li class="level-2">+ <i>Spatial Temporal Tracking</i>:<br /><a target="_blank" href="">[Wild-4D SLAM]</a></li>
+    
+          <li><i>Semantic Prior</i>: <a target="_blank" href="https://youtu.be/AQJ9wFK8jwQ">[LIOM, IROS2020]</a></li>
+          <li class="level-2">
+        </ul>
+      </div>
+    </li>
+  </ul>
+  <div class="main thick">
+    <b>Robust Spatial Perception: Spatial Intelligence Training from Real-world Data</b>
+    <p>How can we efficiently learn spatial and semantic knowlege from above real-world data ?</p>
+    <p>How can we leverage the strength of data-driven methods (eg: foundation models) and optimization methods?</p>
+    <p><a href="javascript:$('#overview-algorithm ul.content').slideToggle();">Show/Hide Work on Algorithms</a></p>
+  </div>
+  <ul class="row" id="overview-algorithm">
+    <li class="page join down">
+      <div class="thin">
+        <b>Foundation Models for Robotics</b>
+        <ul class="content hide">
+          <li><i>IMU Foundation Model</i>: <a target="_blank" href="https://superodometry.com/tartanimu">[Tartan IMU,CVPR2025]</a></li>
+          <li class="level-2">+ <i>IMU Feature Observibility</i>:<br /><a target="_blank" href="https://air-io.github.io/">[AirIO]</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="page join down">
+      <div class="thin">
+        <b>Differentiable Optimization</b>
+        <ul class="content hide">
+          <li><i>Differentiable Factor Graph</i>: <a href="https://pypose.org/">[Pypose,CVPR2023]</a></li>
+        </ul>
+        <ul class="content hide">
+        <li><i>Distributed Factor Graph Optimization</i>: <a href="https://www.youtube.com/watch?v=bV1QrXT6Hzk">[SuperLoop]</a></li>
+        </ul>
+        <ul class="content hide">
+        <li><i>Multi Robot on Gaussian Splatting</i>: <a href="https://www.youtube.com/watch?v=bV1QrXT6Hzk">[MAC-Ego3D, CVPR2025]</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="page join down">
+      <div class="thin">
+        <b>Scalable Evaluation</b>
+        <ul class="content hide">
+          <li><i>Robustness Evaluation on Odometry</i>: <a href="https://superodometry.com/datasets">[SubT-MRS,CVPR2024]</a></li>
+          <li><i>Robustness Evaluation on Reconstruction</i>: <a target="_blank" href="https://arxiv.org/pdf/2501.14319">[Reconstruction from Noisy Video, ICLR 2025]</a></li>
+          <!-- <li class="level-2">+ <i>Planning with Mechanisms</i>: <a target="_blank" href="https://concepts-ai.com/p/mechanisms/">[Manipulation Mechanisms]</a></li> -->
+
+        </ul>
+      </div>
+    </li>
+  </ul>
+</section>
+
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div id="pub-container">
+            <h5 class="subtitle" id="publications">Publications
+            (
+                <a id="publication-by-selected" href="javascript:;", onClick="publicationBySelected();">show selected</a> /
+                <a id="publication-by-date" href="javascript:;", onClick="publicationByDate();">show all by date</a> /
+                <a id="publication-by-topic" href="javascript:;", onClick="publicationByTopic();">show all by topic</a>
+            )
+            </h5>
+            <p class="subtitle-aux"><span class="bold">Topics:</span>
+                <a href="#topic-generalization" onClick="return publicationByTopicSpecific(this)" data-topic="generalization">Generalization</a> /
+                <a href="#topic-optimization" onClick="return publicationByTopicSpecific(this)" data-topic="optimization">Differentiable Optimization</a> /
+                <a href="#topic-adaptation" onClick="return publicationByTopicSpecific(this)" data-topic="adaptation"> Adaptation</a> /
+                <a href="#topic-scene-understanding" onClick="return publicationByTopicSpecific(this)" data-topic="scene-understanding">Scene Understanding</a>
+                <br />
+                <a href="#topic-evaluation" onClick="return publicationByTopicSpecific(this)" data-topic="evaluation">Scalable Evaluation</a> /
+                <a href="#topic-foundation-models" onClick="return publicationByTopicSpecific(this)" data-topic="foundation-models">Foundation Models</a>
+                <span class="note">(*/†: indicates equal contribution.)</span>
+            </p>
+            <div id="pub-card-container" class="activated hide">
+                <!-- Pending: implicit state estimation, brainteaser, lifelong learning and abstraction, STACK -->
+                <div class="pub-card" data-topic="foundation-models" data-year="2025" data-selected="true">
+                    <div class="row">
+                        <div class="col-l col-xs-12 col-lg-3">
+                            <img src="data/shibo_projects/AirIO.gif" />
+                        </div>
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body ">
+                                <h5 class="title">AirIO: Learning Inertial Odometry with Enhanced IMU Feature Observability</h5>
+                                <h6 class="authors">
+                                    <a target="_blank" href="">Yuheng Qiu</a>,
+                                    <a target="_blank" href="">Can Xu</a>,
+                                    <a target="_blank" href="">YuTian Chen</a>,
+                                    <u>Shibo Zhao</u>,
+                                    <a target="_blank" href="">Junyi Geng</a>,
+                                    <a target="_blank" href="">Sebastian Scherer</a>
+                                </h6>
+                                <p class="info">
+                                  <a target="_blank" href="https://www.ieee-ras.org/publications/ra-l" class="conference">RAL 2025</a>
+                                  <a target="_blank" href="https://arxiv.org/abs/2501.15659">Paper</a> /
+                                  <a target="_blank" href="https://github.com/Air-IO/Air-IO">Code</a> /
+                                  <a target="_blank" href="https://air-io.github.io">Website</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="evaluation" data-year="2025" data-selected="false">
+                    <div class="row">
+                        <div class="col-l col-xs-12 col-lg-3">
+                            <img src="data/shibo_projects/benchmark_gaussian.gif" />
+                        </div>
+                        <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body">
+                                <h5 class="title">Scalable Benchmarking and Robust Learning for Noise-Free Ego-Motion and 3D Reconstruction from Noisy Video</h5>
+                                <h6 class="authors">
+                                    <a target="_blank" href="">Xiaohao Xu</a>,
+                                    <a target="_blank" href="">Tianyi Zhang</a>,
+                                    <u>Shibo Zhao</u>,
+                                    <a target="_blank" href="">Xiang Li</a>,
+                                    <a target="_blank" href="">Sibo Wang</a>,
+                                    <a target="_blank" href="">Yongqi Chen</a>,
+                                    <a target="_blank" href="">Ye Li</a>,
+                                    <a target="_blank" href="">Bhiksha Raj</a>,
+                                    <a target="_blank" href="">Matthew Johnson-Roberson</a>,
+                                    <a target="_blank" href="">Sebastian Scherer</a>,
+                                    <a target="_blank" href="">Xiaonan Huang</a>
+                                </h6>
+                                <p class="info">
+                                    <a target="_blank" href="https://openreview.net/group?id=ICLR.cc/2025/Conference#tab-your-consoles" class="conference">ICLR 2025</a>
+                                    <a target="_blank" href="https://arxiv.org/pdf/2501.14319">Paper</a> /
+                                    <a target="_blank" href="https://github.com/Xiaohao-Xu/SLAM-under-Perturbation">Code</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-card" data-topic="foundation-models" data-year="2025" data-selected="true">
+                    <div class="row">
+                      <div class="col-l col-xs-12 col-lg-3">
+                        <video src="data/shibo_projects/tartanimu.mp4" controls muted style="width:100%; margin:0 auto;"></video>
+                      </div>
+                      <div class="col-r col-xs-12 col-lg-9">
+                        <div class="pub-card-body ">
+                          <h5 class="title">Tartan IMU: A Light Foundation Model for Inertial Positioning in Robotics</h5>
+                          <h6 class="authors">
+                            <u>Shibo Zhao</u>,
+                            <a target="_blank" href="">Sifan Zhou</a>,
+                            <a target="_blank" href="">Raphael Blanchard</a>,
+                            <a target="_blank" href="">Yuheng Qiu</a>,
+                            <a target="_blank" href="">Wenshan Wang</a>,
+                            <a target="_blank" href="">Sebastian Scherer</a>
+                          </h6>
+                          <p class="info">
+                            <a target="_blank" href="https://cvpr.thecvf.com/" class="conference">CVPR 2025</a>
+                            <a target="_blank" href="https://openaccess.thecvf.com/content/CVPR2025/papers/Zhao_Tartan_IMU_A_Light_Foundation_Model_for_Inertial_Positioning_in_CVPR_2025_paper.pdf">Paper</a> /
+                            <a target="_blank" href="https://openaccess.thecvf.com/content/CVPR2025/supplemental/Zhao_Tartan_IMU_A_CVPR_2025_supplemental.pdf">Supp</a> /
+                            <a target="_blank" href="https://superodometry.com/tartanimu">Website</a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+               <!-- MAC-Ego3D (CVPR 2025) -->
+                <div class="pub-card" data-topic="generalization" data-year="2025" data-selected="false">
+                    <div class="row">
+                    <div class="col-l col-xs-12 col-lg-3">
+                        <img src="data/shibo_projects/mac-3d.jpg" />
+                    </div>
+                    <div class="col-r col-xs-12 col-lg-9">
+                        <div class="pub-card-body ">
+                        <h5 class="title">MAC-Ego3D: Multi-Agent Gaussian Consensus for Real-Time Collaborative Ego-Motion and Photorealistic 3D Reconstruction</h5>
+                        <h6 class="authors">
+                            <a target="_blank" href="">Xiaohao Xu</a>,
+                            <a target="_blank" href="">Feng Xue</a>,
+                            <u>Shibo Zhao</u>,
+                            <a target="_blank" href="">Yike Pan</a>,
+                            <a target="_blank" href="">Sebastian Scherer</a>,
+                            <a target="_blank" href="">Xiaonan Huang</a>
+                        </h6>
+                        <p class="info">
+                            <a target="_blank" href="https://cvpr.thecvf.com/" class="conference">CVPR 2025</a>
+                            <a target="_blank" href="https://openaccess.thecvf.com/content/CVPR2025/papers/Xu_MAC-Ego3D_Multi-Agent_Gaussian_Consensus_for_Real-Time_Collaborative_Ego-Motion_and_Photorealistic_CVPR_2025_paper.pdf">Paper</a> /
+                            <a target="_blank" href="https://openaccess.thecvf.com/content/CVPR2025/supplemental/Xu_MAC-Ego3D_Multi-Agent_CVPR_2025_supplemental.pdf">Supp</a>
+                            <a target="_blank" href="https://github.com/Xiaohao-Xu/MAC-Ego3D">Code</a>
+                        </p>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="pub-card" data-topic="adaptation" data-year="2025" data-selected="true">
+                        <div class="row">
+                            <div class="col-l col-xs-12 col-lg-3">
+                                <img src="data/shibo_projects/superodom.png" controls muted style="width:100%; margin:0 auto;"></img>
+                            </div>
+                            <div class="col-r col-xs-12 col-lg-9">
+                            <div class="pub-card-body ">
+                                <h5 class="title">SuperOdom2.0: Hierarchical Adaptation Enables Robust Odometry Towards
+                                    All-degraded Environments </h5>
+                                <h6 class="authors">
+                                    <u>Shibo Zhao</u>,
+                                    <a target="_blank" href="">Sifan Zhou</a>,
+                                    <a target="_blank" href="">Yuchen Zhang</a>,
+                                    <a target="_blank" href="">Ji Zhang</a>,
+                                    <a target="_blank" href="">Chen Wang</a>,
+                                    <a target="_blank" href="">Wenshan Wang</a>,
+                                    <a target="_blank" href="">Sebastian Scherer</a>
+                                </h6>
+                                <p class="info">
+                                <a target="_blank" href="https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra" class="conference">Under Review</a>
+                                <a target="_blank" href="https://www.youtube.com/watch?v=8GMSLLNDnvs&list=PLosI3Br8CWkZlTRC8uIjTPo8onkRgswFe&t=1s">Video</a> 
+                             
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="pub-card" data-topic="scene-understanding" data-year="2025" data-selected="true">
+                            <div class="row">
+                                <div class="col-l col-xs-12 col-lg-3">
+                                    <img src="data/shibo_projects/supermap.png" controls muted style="width:100%; margin:0 auto;"></img>
+                                </div>
+                                <div class="col-r col-xs-12 col-lg-9">
+                                <div class="pub-card-body ">
+                                    <h5 class="title">SuperMap: Spatio Temporal Semantic SLAM Enabling Robots to Understand Evolving World in Real Time </h5>
+                                    <h6 class="authors">
+                                        <u>Shibo Zhao</u>,
+                                        <a target="_blank" href="">Guofei Chen</a>,
+                                        <a target="_blank" href="">Honghao Zhu</a>,
+                                        <a target="_blank" href="">Zhiheng Li</a>,
+                                        <a target="_blank" href="">Changwei Yao</a>,
+                                        <a target="_blank" href="">Nader Zantout</a>,
+                                        <a target="_blank" href="">Seungchan Kim</a>,
+                                        <a target="_blank" href="">Wenshan Wang</a>,
+                                    </h6>
+                                    <p class="info">
+                                    <a target="_blank" href="https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra" class="conference">Under Review</a>
+                                    <a target="_blank" href="https://www.youtube.com/watch?v=C0a_-AkIL6w">Video</a> 
+                                 
+                                    </p>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+
+            <div class="pub-card" data-topic="adaptation" data-year="2025" data-selected="true">
+            <div class="row">
+                <div class="col-l col-xs-12 col-lg-3">
+                    <img src="data/shibo_projects/mso.png" controls muted style="width:100%; margin:0 auto;"></img>
+                </div>
+                <div class="col-r col-xs-12 col-lg-9">
+                <div class="pub-card-body ">
+                    <h5 class="title">MSO: Uncertainty-aware Multi-spectral Inertial Odometry</h5>
+                    <h6 class="authors">
+                    <u>Shibo Zhao</u>,
+                    <a target="_blank" href="">Parv Maheshwari</a>,
+                    <a target="_blank" href="">Tianhao Wu</a>,
+                    <a target="_blank" href="">Yao He</a>,
+                    <a target="_blank" href="">Mukai Yu</a>,
+                    <a target="_blank" href="">Andrew Jong</a>,
+                    <a target="_blank" href="">Aayush Fadia</a>,
+                    <a target="_blank" href="">Ranai Srivastav</a>,
+                    <a target="_blank" href="">Wenshan Wang</a>,
+                    <a target="_blank" href="">Sebastian Scherer</a>
+                    </h6>
+                    <p class="info">
+                    <a target="_blank" href="https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra" class="conference">Under Review</a>
+                    <a target="_blank" href="https://studio.youtube.com/video/iDAmD-t83Uw/edit">Video</a> 
+                 
+                    </p>
+                </div>
+                </div>
+            </div>
+            </div>
+
+             <!-- SuperLoc (ICRA 2025) -->
+             <div class="pub-card" data-topic="adaptation" data-year="2025" data-selected="true">
+                <div class="row">
+                    <div class="col-l col-xs-12 col-lg-3">
+                        <video src="data/shibo_projects/superloc.mp4" controls muted style="width:100%; margin:0 auto;"></video>
+                    </div>
+                    <div class="col-r col-xs-12 col-lg-9">
+                    <div class="pub-card-body ">
+                        <h5 class="title">SuperLoc: The Key to Robust LiDAR-Inertial Localization Lies in Predicting Alignment Risks</h5>
+                        <h6 class="authors">
+                        <u>Shibo Zhao</u>,
+                        <a target="_blank" href="">Honghao Zhu</a>,
+                        <a target="_blank" href="">Yuanjun Gao</a>,
+                        <a target="_blank" href="">Beomsoo Kim</a>,
+                        <a target="_blank" href="">Yuheng Qiu</a>,
+                        <a target="_blank" href="">Aaron M. Johnson</a>,
+                        <a target="_blank" href="">Sebastian Scherer</a>
+                        </h6>
+                        <p class="info">
+                        <a target="_blank" href="https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra" class="conference">ICRA 2025</a>
+                        <a target="_blank" href="https://arxiv.org/abs/2412.02901">Paper</a> /
+                        <a target="_blank" href="https://github.com/superxslam/SuperOdom">Code</a> /
+                        <a target="_blank" href="https://superodometry.com/superloc">Website</a>
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+    
+
+                <div class="pub-card" data-topic="optimization" data-year="2023" data-selected="true">
+                    <div class="row">
+                        <div class="col-l col-xs-12 col-lg-3">
+                            <img src="data/shibo_projects/superloop.png" controls muted style="width:100%; margin:0 auto;"></img>
+                        </div>
+                        <div class="col-r col-xs-12 col-lg-9">
+                        <div class="pub-card-body ">
+                            <h5 class="title">SuperLoop:  Distributed Multi-robot SLAM System with Online Place Recognition </h5>
+                            <h6 class="authors">
+                                <u>Shibo Zhao</u>,
+                                <a target="_blank" href="">Jay Karhade</a>,
+                                <a target="_blank" href="">Damanpreet Singh</a>,
+                                <a target="_blank" href="">Mansi Sarawata</a>,
+                                <a target="_blank" href="">Sebastian Scherer</a>,
+                            </h6>
+                            <p class="info">
+                            <a target="_blank" href="https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra" class="conference">Under Review</a>
+                            <a target="_blank" href="https://www.youtube.com/watch?v=YCDoYDm4YHE">Video</a> 
+                         
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+              <!-- SubT-MRS Dataset (CVPR 2024) -->
+<div class="pub-card" data-topic="evaluation" data-year="2024" data-selected="true">
+    <div class="row">
+      <div class="col-l col-xs-12 col-lg-3">
+        <img src="data/shibo_projects/subt-mrs.jpg" />
+      </div>
+      <div class="col-r col-xs-12 col-lg-9">
+        <div class="pub-card-body ">
+          <h5 class="title">SubT-MRS Dataset: Pushing SLAM Towards All-weather Environments</h5>
+          <h6 class="authors">
+            <u>Shibo Zhao</u>,
+            <a target="_blank" href="">Yuanjun Gao</a>,
+            <a target="_blank" href="">Tianhao Wu</a>,
+            <a target="_blank" href="">Damanpreet Singh</a>,
+            <a target="_blank" href="">Rushan Jiang</a>,
+            <a target="_blank" href="">Haoxiang Sun</a>,
+            <a target="_blank" href="">Mansi Sarawata</a>,
+            <a target="_blank" href="">Yuheng Qiu</a>,
+            <a target="_blank" href="">Warren Whittaker</a>,
+            <a target="_blank" href="">Ian Higgins</a>,
+            <a target="_blank" href="">Yi Du</a>,
+            <a target="_blank" href="">Shaoshu Su</a>,
+            <a target="_blank" href="">Can Xu</a>,
+            <a target="_blank" href="">John Keller</a>,
+            <a target="_blank" href="">Jay Karhade</a>,
+            <a target="_blank" href="">Lucas Nogueira</a>,
+            <a target="_blank" href="">Sourojit Saha</a>,
+            <a target="_blank" href="">Ji Zhang</a>,
+            <a target="_blank" href="">Wenshan Wang</a>,
+            <a target="_blank" href="">Chen Wang</a>,
+            <a target="_blank" href="">Sebastian Scherer</a>
+          </h6>
+          <p class="info">
+            <a target="_blank" href="https://cvpr.thecvf.com/" class="conference">CVPR 2024</a>
+            <a target="_blank" href="https://openaccess.thecvf.com/content/CVPR2024/papers/Zhao_SubT-MRS_Dataset_Pushing_SLAM_Towards_All-weather_Environments_CVPR_2024_paper.pdf">Paper</a> /
+            <a target="_blank" href="https://superodometry.com/datasets">Website</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Present and Future of SLAM in Extreme Underground Environments (T-RO 2024) -->
+<div class="pub-card" data-topic="evaluation" data-year="2024" data-selected="false">
+    <div class="row">
+      <div class="col-l col-xs-12 col-lg-3">
+        <img src="data/shibo_projects/subt-survey.png" />
+      </div>
+      <div class="col-r col-xs-12 col-lg-9">
+        <div class="pub-card-body ">
+          <h5 class="title">Present and Future of SLAM in Extreme Underground Environments: The DARPA SubT Challenge</h5>
+          <h6 class="authors">
+            <a target="_blank" href="">Kamak Ebadi</a>,
+            <a target="_blank" href="">Lukas Bernreiter</a>,
+            <a target="_blank" href="">Harel Biggie</a>,
+            <a target="_blank" href="">Gavin Catt</a>,
+            <a target="_blank" href="">Yun Chang</a>,
+            <!-- many others ... -->
+            <u>Shibo Zhao</u>,
+            <a target="_blank" href="">Sebastian Scherer</a>,
+            <a target="_blank" href="">Luca Carlone</a>,
+            <a target="_blank" href="">et al.</a>
+          </h6>
+          <p class="info">
+            <a target="_blank" href="https://www.ieee-ras.org/publications/t-ro" class="conference">IEEE T-RO 2024</a>
+            <a target="_blank" href="https://arxiv.org/abs/2208.01787">Paper</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- PyPose (CVPR 2023) -->
+  <div class="pub-card" data-topic="optimization" data-year="2023" data-selected="true">
+    <div class="row">
+      <div class="col-l col-xs-12 col-lg-3">
+        <img src="data/shibo_projects/pypose.jpg" />
+      </div>
+      <div class="col-r col-xs-12 col-lg-9">
+        <div class="pub-card-body ">
+          <h5 class="title">PyPose: A Library for Robot Learning with Physics-based Optimization</h5>
+          <h6 class="authors">
+            <a target="_blank" href="">Chen Wang</a>,
+            <a target="_blank" href="">Dasong Gao</a>,
+            <a target="_blank" href="">Kuan Xu</a>,
+            <a target="_blank" href="">Junyi Geng</a>,
+            <a target="_blank" href="">Yaoyu Hu</a>,
+            <a target="_blank" href="">Yuheng Qiu</a>,
+            <a target="_blank" href="">Bowen Li</a>,
+            <a target="_blank" href="">Fan Yang</a>,
+            <a target="_blank" href="">Brady Moon</a>,
+            <a target="_blank" href="">Abhinav Pandey</a>,
+            <a target="_blank" href="">Aryan</a>,
+            <a target="_blank" href="">Jiahe Xu</a>,
+            <a target="_blank" href="">Tianhao Wu</a>,
+            <a target="_blank" href="">Haonan He</a>,
+            <a target="_blank" href="">Daning Huang</a>,
+            <a target="_blank" href="">Zhongqiang Ren</a>,
+            <u>Shibo Zhao</u>,
+            <a target="_blank" href="">Taimeng Fu</a>,
+            <a target="_blank" href="">Pranay Reddy</a>,
+            <a target="_blank" href="">Xiao Lin</a>,
+            <a target="_blank" href="">Wenshan Wang</a>,
+            <a target="_blank" href="">Jingnan Shi</a>,
+            <a target="_blank" href="">Rajat Talak</a>,
+            <a target="_blank" href="">Kun Cao</a>,
+            <a target="_blank" href="">Yi Du</a>,
+            <a target="_blank" href="">Han Wang</a>,
+            <a target="_blank" href="">Huai Yu</a>,
+            <a target="_blank" href="">Shanzhao Wang</a>,
+            <a target="_blank" href="">Siyu Chen</a>,
+            <a target="_blank" href="">Ananth Kashyap</a>,
+            <a target="_blank" href="">Rohan Bandaru</a>,
+            <a target="_blank" href="">Karthik Dantu</a>,
+            <a target="_blank" href="">Jiajun Wu</a>,
+            <a target="_blank" href="">Lihua Xie</a>,
+            <a target="_blank" href="">Luca Carlone</a>,
+            <a target="_blank" href="">Marco Hutter</a>,
+            <a target="_blank" href="">Sebastian Scherer</a>
+          </h6>
+          <p class="info">
+            <a target="_blank" href="https://cvpr.thecvf.com/" class="conference">CVPR 2023</a>
+            <a target="_blank" href="https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_PyPose_A_Library_for_Robot_Learning_With_Physics-Based_Optimization_CVPR_2023_paper.pdf">Paper</a> /
+            <a target="_blank" href="https://github.com/pypose/pypose">Code</a> /
+            <a target="_blank" href="https://pypose.org/">Website</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Super Odometry (IROS 2021) -->
+  <div class="pub-card" data-topic="generalization" data-year="2021" data-selected="true">
+    <div class="row">
+      <div class="col-l col-xs-12 col-lg-3">
+        <img src="data/shibo_projects/superodom_video.gif" />
+      </div>
+      <div class="col-r col-xs-12 col-lg-9">
+        <div class="pub-card-body ">
+          <h5 class="title">Super Odometry: IMU-centric LiDAR-Visual-Inertial Estimator for Challenging Environments</h5>
+          <h6 class="authors">
+            <u>Shibo Zhao</u>,
+            <a target="_blank" href="">Hengrui Zhang</a>,
+            <a target="_blank" href="">Peng Wang</a>,
+            <a target="_blank" href="">Lucas Nogueira</a>,
+            <a target="_blank" href="">Sebastian Scherer</a>
+          </h6>
+          <p class="info">
+            <a target="_blank" href="https://www.ieee-ras.org/conferences-workshops/financially-co-sponsored/iros" class="conference">IROS 2021</a>
+            <a target="_blank" href="https://arxiv.org/abs/2104.14938">Paper</a> /
+            <a target="_blank" href="https://github.com/superxslam/SuperOdom">Code</a> /
+            <a target="_blank" href="https://superodometry.com">Website</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Vanishing Point Aided LiDAR-Visual-Inertial Estimator (ICRA 2021)
+  <div class="pub-card" data-topic="slam" data-year="2021" data-selected="false">
+    <div class="row">
+      <div class="col-l col-xs-12 col-lg-3">
+        <img src="data/shibo_projects/vp-lvio.jpg" />
+      </div>
+      <div class="col-r col-xs-12 col-lg-9">
+        <div class="pub-card-body ">
+          <h5 class="title">Vanishing Point Aided LiDAR-Visual-Inertial Estimator</h5>
+          <h6 class="authors">
+            <a target="_blank" href="">Peng Wang</a>,
+            <a target="_blank" href="">Zheng Fang</a>,
+            <u>Shibo Zhao</u>,
+            <a target="_blank" href="">Yongnan Chen</a>,
+            <a target="_blank" href="">Ming Zhou</a>,
+            <a target="_blank" href="">Shan An</a>
+          </h6>
+          <p class="info">
+            <a target="_blank" href="https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra" class="conference">ICRA 2021</a>
+            <a target="_blank" href="https://dl.acm.org/doi/10.1109/ICRA48506.2021.9561087">Paper</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  
+  <!-- TP-TIO (IROS 2020) -->
+  <div class="pub-card" data-topic="adaptation" data-year="2020" data-selected="true">
+    <div class="row">
+      <div class="col-l col-xs-12 col-lg-3">
+        <img src="data/shibo_projects/tp-tio.gif" />
+      </div>
+      <div class="col-r col-xs-12 col-lg-9">
+        <div class="pub-card-body ">
+          <h5 class="title">TP-TIO: A Robust Thermal-Inertial Odometry with Deep ThermalPoint</h5>
+          <h6 class="authors">
+            <u>Shibo Zhao</u>,
+            <a target="_blank" href="">Peng Wang</a>,
+            <a target="_blank" href="">Hengrui Zhang</a>,
+            <a target="_blank" href="">Zheng Fang</a>,
+            <a target="_blank" href="">Sebastian Scherer</a>
+          </h6>
+          <p class="info">
+            <a target="_blank" href="https://www.ieee-ras.org/conferences-workshops/financially-co-sponsored/iros" class="conference">IROS 2020</a>
+            <a target="_blank" href="https://arxiv.org/abs/2012.03455">Paper</a>/
+            <a target="_blank" href="https://www.youtube.com/watch?v=aa4whgmYTqY&t=2s">Video</a>/
+            <a target="_blank" href="https://superodometry.com/tptio"> Website</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Robust Laser-Inertial Odom. & Mapping for Highways (IROS 2019) -->
+  <div class="pub-card" data-topic="scene-understanding" data-year="2019" data-selected="true">
+    <div class="row">
+      <div class="col-l col-xs-12 col-lg-3">
+        <img src="data/shibo_projects/robust-highway.png" />
+      </div>
+      <div class="col-r col-xs-12 col-lg-9">
+        <div class="pub-card-body ">
+          <h5 class="title">A Robust Laser-Inertial Odometry and Mapping Method for Large-Scale Highway Environments</h5>
+          <h6 class="authors">
+            <u>Shibo Zhao</u>,
+            <a target="_blank" href="">Zheng Fang</a>,
+            <a target="_blank" href="">HaoLai Li</a>,
+            <a target="_blank" href="">Sebastian Scherer</a>
+          </h6>
+          <p class="info">
+            <a target="_blank" href="https://www.ieee-ras.org/conferences-workshops/financially-co-sponsored/iros" class="conference">IROS 2019</a>
+            <a target="_blank" href="https://arxiv.org/abs/2009.02622">Paper</a>/
+            <a target="_blank" href="https://www.youtube.com/watch?v=AQJ9wFK8jwQ">Video</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            <!--div class="comic"><img src="static/img/rabbit-working.jpg" height="90px" /></div-->
+            <!--div class="comic"><img src="static/img/girl-with-fish.jpg" height="90px" /></div-->
+            <!--div class="comic"><img src="static/img/loong/loong-bottom.png" height="120px" /></div-->
+            <!--div class="comic"><img src="static/img/loong/loong-bottom-summer.png" height="120px" /></div-->
+            <div class="copyright">
+                &copy; 2015-2025 Shibo Zhao. Template Credit: Jiayuan Mao.<br />
+                <span style="color:var(--background-color)">Dedicated to my best friend Zhaoyi</span><br />
+                <div class="visitor-counter">
+                    <i class="fa fa-users" style="margin-right: 5px;"></i>
+                    <span id="visitor-count">Loading...</span> visitors
+                </div>
+                <!--p style="font-size:12px">Background photo: Rainbow Bridge (レインボーブリッジ) @ Tokyo, Japan, 2016</p-->
+                <!--Background photo: 798 Art Zone, Beijing, China. 2019, by <a href="https://www.instagram.com/42x00/">42x00</a>.<br />-->
+                <!--Background photo: Solvang, CA, USA. 2017.-->
+                <!--Avatar photo: Hynes Convention Center, Boston, MA. 2019, by <a href="https://www.instagram.com/42x00/">42x00</a>.-->
+                <!--Avatar photo: MIT, Cambridge, MA, USA. 2018, by <a href="http://linji.me/">Ji Lin</a>.-->
+            </div>
+            <div class="stat">
+                <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=-23A1GPVvvuNiuBYLygGVwg1KDr82CpUn5H3v7m6J9s"></script>
+                <!--script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=-23A1GPVvvuNiuBYLygGVwg1KDr82CpUn5H3v7m6J9s&cl=ffffff&w=a"></script-->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script type="text/javascript" src="static/js/jquery.color.min.js"></script>
+<!--script type="text/javascript" src="static/js/wave.js"></script-->
+<script type="text/javascript">
+
+$.fn.isInViewport = function() {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+var allPublications = null;
+
+function playAllVideos() {
+  $("#pub-container video").each(function() {
+    this.play();
+  });
+}
+
+function publicationBySelected() {
+    var a = $("#publication-by-selected")
+    if (a.hasClass("activated")) {
+        return ;
+    }
+
+    $("#pub-container .subtitle a").removeClass("activated");
+    $("#pub-container .subtitle-aux a").removeClass("activated");
+    a.addClass("activated");
+
+    $("#pub-card-container").html("");
+    for (var pubId = 0; pubId < allPublications.length; pubId++) {
+        var pub = $(allPublications[pubId]);
+        if (pub.data("selected") == true) {
+            $("#pub-card-container").append(pub);
+        }
+    }
+    playAllVideos();
+}
+
+function publicationByDate() {
+    var a = $("#publication-by-date")
+    if (a.hasClass("activated")) {
+        return ;
+    }
+
+    $("#pub-container .subtitle a").removeClass("activated");
+    $("#pub-container .subtitle-aux a").removeClass("activated");
+    a.addClass("activated");
+
+    $("#pub-card-container").html("");
+    for (var pubId = 0; pubId < allPublications.length; pubId++) {
+        if (pubId == 0 || $(allPublications[pubId-1]).data("year") != $(allPublications[pubId]).data("year")) {
+            var year = $(allPublications[pubId]).data("year");
+            $("#pub-card-container").append($("<h5 id='year-" + year.toString() + "'>" + year.toString() + "</h5>"));
+        }
+        $("#pub-card-container").append(allPublications[pubId]);
+    }
+    playAllVideos();
+}
+
+function publicationByTopicInner() {
+    var a = $("#publication-by-topic")
+    if (a.hasClass("activated")) {
+        return ;
+    }
+    $("#pub-container .subtitle a").removeClass("activated");
+    a.addClass("activated");
+
+    $("#pub-card-container").html("");
+    for (var topicId in allTopics) {
+        var topic = allTopics[topicId].name;
+        var topicTitle = allTopics[topicId].title;
+        // var topicTitle = topic.split("-").map(function (a) { return a[0].toUpperCase() + a.substr(1).toLowerCase(); }).join(" ");
+        $("#pub-card-container").append($("<h5 id='topic-" + topic + "'>" + topicTitle + "</h5>"));
+        for (var pubId = 0; pubId < allPublications.length; pubId++) {
+            var pub = $(allPublications[pubId]);
+            if (pub.data("topic").indexOf(topic) != -1) {
+                $("#pub-card-container").append(pub);
+            }
+        }
+    }
+}
+
+function publicationByTopicSpecificInner(a) {
+    if ($(a).hasClass("activated")) {
+        return false;
+    }
+
+    $("#pub-container .subtitle-aux a").removeClass("activated");
+    $(a).addClass("activated");
+}
+
+function publicationByTopic() {
+    publicationByTopicInner();
+    publicationByTopicSpecificInner($("#pub-container .subtitle-aux a:first"));
+    playAllVideos();
+    return true;
+}
+
+function publicationByTopicSpecific(a) {
+    publicationByTopicInner();
+    publicationByTopicSpecificInner(a);
+
+    var hash = a.hash;
+    $(hash).prop('id', hash.substr(1) + '-noscroll');
+    window.location.hash = hash;
+    $(hash + '-noscroll').prop('id', hash.substr(1));
+
+    if (!$(hash).isInViewport()) {
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 1000, function(){
+        });
+    }
+
+    playAllVideos();
+    return false;
+}
+
+function toggleNews(linkElement) {
+    $("#news-more").slideToggle();
+    var e = $("#news-more-button");
+    if (e.data("expanded")) {
+        e.html("Click to hide old news ...");
+        e.data("expanded", false);
+    } else {
+        e.html("Click to show older news ...");
+        e.data("expanded", true);
+    }
+}
+
+$(function() {
+    getRealSize = function(bgImg) {
+        var img = new Image();
+        img.src = bgImg.attr("src");
+        var width = img.width,
+            height = img.height;
+        return {
+            width: width,
+            height: height
+        }
+    };
+
+    getRealWindowSize = function() {
+        var winWidth = null,
+            winHeight = null;
+        if (window.innerWidth) winWidth = window.innerWidth;
+        else if ((document.body) && (document.body.clientWidth)) winWidth = document.body.clientWidth;
+        if (window.innerHeight) winHeight = window.innerHeight;
+        else if ((document.body) && (document.body.clientHeight)) winHeight = document.body.clientHeight;
+        if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth) {
+            winHeight = document.documentElement.clientHeight;
+            winWidth = document.documentElement.clientWidth
+        }
+        return {
+            width: winWidth,
+            height: winHeight
+        }
+    };
+
+    fullBg = function() {
+        var bgImg = $("#background");
+        var mainContainer = $("#main");
+        var firstFire = null;
+
+        if (bgImg.length == 0) {
+            return ;
+        }
+
+        function resizeImg() {
+            var realSize = getRealSize(bgImg);
+            var imgWidth = realSize.width;
+            var imgHeight = realSize.height;
+
+            if (imgWidth == 0 || imgHeight == 0) {
+                setTimeout(function() {
+                    resizeImg();
+                }, 200);
+            }
+
+            console.log(realSize);
+            var realWinSize = getRealWindowSize();
+            var winWidth = realWinSize.width;
+            var winHeight = realWinSize.height;
+            var widthRatio = winWidth / imgWidth;
+            var heightRatio = winHeight / imgHeight;
+            console.log(realWinSize);
+            if (widthRatio > heightRatio) {
+                bgImg.width(imgWidth * widthRatio + 'px').height(imgHeight * widthRatio + 'px').css({'top':
+                    -(imgHeight * widthRatio - winHeight) / 10 * 5 + 'px', 'left': '0'})
+            } else {
+                bgImg.width(imgWidth * heightRatio + 'px').height(imgHeight * heightRatio + 'px').css({'left':
+                    -(imgWidth * heightRatio - winWidth) / 10 * 3 + 'px', 'top': '0'})
+            }
+            // mainContainer.css({
+            //     width: winWidth,
+            //     height: winHeight
+            // });
+        }
+
+        resizeImg();
+        window.onresize = function() {
+            if (firstFire === null) {
+                firstFire = setTimeout(function() {
+                    resizeImg();
+                    firstFire = null
+                }, 100)
+            }
+        }
+    };
+
+    targetColor = $("#main-content-container .name").css("color");
+    animatedLink = function(speed) {
+        $("#main-content-container .col-link li").hover(function() {
+            $(this).find('.icon').animate({
+                color: targetColor,
+                borderColor: targetColor
+            }, speed);
+            $(this).find('.caption').animate({
+                color: targetColor
+            })
+        }, function() {
+            $(this).find('.icon').animate({
+                borderColor: '#cccccc',
+                color: '#cccccc'
+            }, speed);
+            $(this).find('.caption').animate({
+                color: '#cccccc'
+            })
+        })
+    };
+
+    // fullBg();
+    // animatedLink(400);
+
+    // Function to initialize visitor counter
+    function initializeVisitorCounter() {
+        // Get visitor count from localStorage or start with 0
+        var visitorCount = localStorage.getItem('visitorCount') || 0;
+        
+        // Increment count for this visit
+        visitorCount = parseInt(visitorCount) + 1;
+        
+        // Store updated count
+        localStorage.setItem('visitorCount', visitorCount);
+        
+        // Update the display
+        $('#visitor-count').text(visitorCount.toLocaleString());
+        
+        // Add a small animation effect
+        $('#visitor-count').fadeIn(500);
+    }
+
+    // Function to create year headers
+    function createYearHeaders() {
+        var years = {};
+        var pubCards = $("#pub-card-container .pub-card");
+        
+        // Count publications by year
+        pubCards.each(function() {
+            var year = $(this).data("year");
+            if (year) {
+                if (!years[year]) {
+                    years[year] = 0;
+                }
+                years[year]++;
+            }
+        });
+        
+        // Sort years in descending order
+        var sortedYears = Object.keys(years).sort(function(a, b) {
+            return parseInt(b) - parseInt(a);
+        });
+        
+        // Create year headers
+        sortedYears.forEach(function(year) {
+            var yearHeader = $('<div class="year-header">' +
+                '<div>' +
+                    '<span class="year-number">' + year + '</span>' +
+                '</div>' +
+                '</div>');
+            
+            // Insert year header before the first publication of that year
+            var firstPubOfYear = pubCards.filter('[data-year="' + year + '"]').first();
+            if (firstPubOfYear.length) {
+                yearHeader.insertBefore(firstPubOfYear);
+            }
+        });
+    }
+
+    allPublications = $("#pub-card-container .pub-card");
+    allTopicsLink = $("#pub-container .subtitle-aux a");
+    allTopics = [];
+    for (var topicId = 0; topicId < allTopicsLink.length; topicId++) {
+        allTopics.push({name: $(allTopicsLink[topicId]).data("topic"), title: $(allTopicsLink[topicId]).html()});
+    }
+
+    $("#publication-by-selected").click();
+    // $("#publication-by-date").click();
+    $("#pub-card-container").removeClass("hide");
+    
+    // Create year headers for publications
+    createYearHeaders();
+    
+    // Initialize visitor counter
+    initializeVisitorCounter();
+    
+    // Smooth scrolling for navigation links
+    $('.nav-link[href^="#"]').on('click', function(e) {
+        e.preventDefault();
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top - 80 // Offset for fixed navbar
+            }, 800);
+        }
+    });
+    
+    // Add active class to nav links based on scroll position
+    $(window).scroll(function() {
+        var scrollDistance = $(window).scrollTop();
+        
+        // Add active class to nav links based on scroll position
+        $('section').each(function(i) {
+            if ($(this).position().top - 100 <= scrollDistance) {
+                $('.nav-link.active').removeClass('active');
+                $('.nav-link').eq(i).addClass('active');
+            }
+        });
+    }).scroll();
+});
+</script>
+</body>
+</html>

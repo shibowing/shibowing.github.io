@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shibo Zhao - Blog</title>
+    <meta name="description" content="Shibo Zhao's personal blog - thoughts on AI, robotics, and research">
+    <meta name="keywords" content="Shibo Zhao, AI, robotics, research, blog">
+    <meta name="author" content="Shibo Zhao">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        :root {
+            --main-color: #566c7f;
+            --link-color: #566c7f;
+            --highlight-color: #4a90e2;
+            --background-color: #ffffff;
+            --secondary-content-background-color: #f8f9fa;
+            --secondary-link-color: #666666;
+            --secondary-link-border-color: #e9ecef;
+            --link-button-background-color: #f8f9fa;
+        }
+
+        body {
+            font-family: "Source Sans Pro", Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation Bar Styling */
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: translateY(-1px);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 0 5px;
+        }
+
+        .nav-link:hover {
+            color: var(--highlight-color) !important;
+            transform: translateY(-1px);
+        }
+
+        .nav-link.active {
+            color: var(--highlight-color) !important;
+            font-weight: 600;
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .navbar-toggler:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .navbar-nav {
+            align-items: center;
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar-nav {
+                text-align: center;
+                margin-top: 1rem;
+            }
+        }
+
+        /* Adjust main content to account for fixed navbar */
+        #main {
+            margin-top: 0;
+            padding-top: 20px;
+        }
+
+        /* Blog Content Styling */
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .blog-header h1 {
+            color: var(--main-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .blog-header p {
+            color: var(--secondary-link-color);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        .blog-post {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--secondary-link-border-color);
+        }
+
+        .blog-post:last-child {
+            border-bottom: none;
+        }
+
+        .blog-post h2 {
+            color: var(--main-color);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .blog-post h2 a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .blog-post h2 a:hover {
+            color: var(--highlight-color);
+        }
+
+        .blog-post .date {
+            color: var(--secondary-link-color);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .blog-post .excerpt {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .blog-post .tags {
+            margin-top: 15px;
+        }
+
+        .blog-post .tag {
+            display: inline-block;
+            background-color: var(--link-button-background-color);
+            color: var(--link-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .blog-post .tag:hover {
+            background-color: var(--main-color);
+            color: white;
+            text-decoration: none;
+        }
+
+        .back-to-home {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .back-to-home a {
+            display: inline-block;
+            background-color: var(--main-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-home a:hover {
+            background-color: var(--highlight-color);
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--secondary-link-color);
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .empty-state h3 {
+            color: var(--main-color);
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-container {
+                padding: 20px 15px;
+            }
+            
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-post h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--background-color); border-bottom: 1px solid var(--secondary-link-border-color);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="color: var(--main-color); font-weight: 600;">Shibo Zhao</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="color: var(--link-color);">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#overview" style="color: var(--link-color);">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#publications" style="color: var(--link-color);">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html" style="color: var(--link-color);">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1>Blog</h1>
+            <p>Thoughts on AI, robotics, and research</p>
+        </div>
+
+        <!-- Sample Blog Posts (you can replace these with your actual content) -->
+        <div class="blog-post">
+            <h2><a href="#">The Future of Neuro-Symbolic AI in Robotics</a></h2>
+            <div class="date">December 15, 2024</div>
+            <div class="excerpt">
+                Exploring how neuro-symbolic approaches are revolutionizing robotic manipulation and planning. 
+                This post discusses the integration of symbolic reasoning with neural networks for more robust 
+                and interpretable AI systems in physical environments.
+            </div>
+            <div class="tags">
+                <a href="#" class="tag">AI</a>
+                <a href="#" class="tag">Robotics</a>
+                <a href="#" class="tag">Neuro-Symbolic</a>
+            </div>
+        </div>
+
+        <div class="blog-post">
+            <h2><a href="#">Compositional Learning in Embodied Agents</a></h2>
+            <div class="date">November 28, 2024</div>
+            <div class="excerpt">
+                How can we build AI systems that learn concepts compositionally and apply them to new situations? 
+                This post explores recent advances in compositional learning for embodied AI and their implications 
+                for building more generalizable robotic systems.
+            </div>
+            <div class="tags">
+                <a href="#" class="tag">Compositional Learning</a>
+                <a href="#" class="tag">Embodied AI</a>
+                <a href="#" class="tag">Generalization</a>
+            </div>
+        </div>
+
+        <div class="blog-post">
+            <h2><a href="#">Reflections on My PhD Journey</a></h2>
+            <div class="date">October 12, 2024</div>
+            <div class="excerpt">
+                Personal insights and lessons learned during my PhD research at MIT. From choosing research directions 
+                to balancing multiple projects, this post shares the challenges and rewards of pursuing a PhD in AI and robotics.
+            </div>
+            <div class="tags">
+                <a href="#" class="tag">PhD</a>
+                <a href="#" class="tag">Research</a>
+                <a href="#" class="tag">MIT</a>
+            </div>
+        </div>
+
+        <!-- Empty State (uncomment if you want to show this instead of sample posts) -->
+        <!--
+        <div class="empty-state">
+            <i class="fa fa-pencil"></i>
+            <h3>Coming Soon</h3>
+            <p>I'm working on some interesting blog posts about AI, robotics, and research. Check back soon!</p>
+        </div>
+        -->
+
+        <div class="back-to-home">
+            <a href="index.html"><i class="fa fa-arrow-left" style="margin-right: 8px;"></i>Back to Home</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+    <script>
+        // Add active class to current nav item
+        $(document).ready(function() {
+            $('.nav-link[href="blog.html"]').addClass('active');
+        });
+    </script>
+</body>
+</html> 
