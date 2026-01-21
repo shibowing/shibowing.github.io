@@ -104,6 +104,7 @@ a:hover{color:var(--link-color-hover);cursor:pointer}
 
 #main-content-container .col-info{height:100%;align-items:center;}
 #main-info-container{padding-top:15px}
+@media (min-width: 768px) { #main-info-container{padding-left:30px; padding-top:15px} }
 #main-info-container .col-name{text-align:center;margin-top:30px}
 @media (min-width: 768px) { #main-info-container .col-name{text-align:left;margin-top:0;}
 }
@@ -141,7 +142,7 @@ section.overview li{font-weight:400;list-style:none}
 .thin{border:1px solid var(--secondary-link-border-color);padding:.5em}
 .main{text-align:center}
 .main ul{display:block;width:150px;margin:1em auto 0}
-ul.row{width:100%;display:flex;align-items:flex-start}
+ul.row{width:100%;display:flex !important;flex-direction:row !important;flex-wrap:nowrap !important;align-items:flex-start}
 ul.row li.page{flex:1;margin:0 .5em;min-width:280px}
 ul.row li.page.stretch{align-self:stretch}
 ul.row li.page:first-child{margin-left:0}
@@ -609,7 +610,7 @@ section.overview .thin ul.content{transition:opacity 200ms ease;opacity:1}
                             <p class="email"><span style="margin-right:1em">Email: shiboz@andrew.cmu.edu</span> Links: <a href="document/Shibo_Latest_CV_20250813.pdf">CV</a> | <a href="document/Shibo_Research_Statement.pdf">Research Statement</a></p>
                             I will be 5th year PhD candidate at <a target="_blank" href="https://www.ri.cmu.edu/">CMU Robotics Institute</a>, advised by
                             Prof. <a target="_blank" href="https://www.ri.cmu.edu/ri-faculty/sebastian-scherer/"> Sebastian Scherer</a>.
-
+                            
                             <p class="text">I am also grateful to have wonderful mentors including <a href='http://www.cs.cmu.edu/~kaess/'> Professor. Michael Kaess</a> and <a href='https://frc.ri.cmu.edu/~zhangji/'> Professor. Ji Zhang</a>.
                             My research interests include 3D computer vision and robotics. Currently, I am focusing on building spatial intelligence system for robotics, which incorporates a adaptive sensor fusion framework for robust state
                             estimation, a 4D scene representation with flexible levels of detail, and scene reasoning to support VLA navigation.
@@ -634,7 +635,8 @@ section.overview .thin ul.content{transition:opacity 200ms ease;opacity:1}
                     To junior PhD/master/undergraduate students: if you would like to chat about life, career plan, or research ideas related to AI/CV/robotics, feel free to email me to schedule a meeting.
                     I will dedicate 30 mins every week for such meetings. 
                 </li> -->
-
+                <li><span style="background-color: #fff3cd; padding: 2px 6px; border-radius: 3px; font-weight: 500;">Super Odometry is accepted by Science Robotics and selected as a top feature article on the website. Feel free  to check the details <a href="superodometry.com"> here </a></span></li>
+                
                 <li>I was invited to give a talk on IMU Foundation Model <a href="https://sites.google.com/view/icra2024-ws-bi-mp/home"> at Apple </a>Curpertino, USA 2025.</li>
 
                 <li>I was invited as a author to write a chapter in SLAM Handbook<a target="_blank" href="https://github.com/SLAM-Handbook-contributors/slam-handbook-public-release"> "From Localization and Mapping to Spatial Intelligence"</a>, USA 2025 </li>
@@ -720,9 +722,7 @@ section.overview .thin ul.content{transition:opacity 200ms ease;opacity:1}
         <ul class="content hide">
           <li><i>Spatial-temporal 4D Mapping</i>: <a target="_blank" href="https://www.youtube.com/watch?v=C0a_-AkIL6w">[Super Map]</a></li>
           <li class="level-2">+ <i>Spatial Temporal Tracking</i>:<br /><a target="_blank" href="">[Wild-4D SLAM]</a></li>
-    
           <li><i>Semantic Prior</i>: <a target="_blank" href="https://youtu.be/AQJ9wFK8jwQ">[LIOM, IROS2020]</a></li>
-          <li class="level-2">
         </ul>
       </div>
     </li>
@@ -795,6 +795,37 @@ section.overview .thin ul.content{transition:opacity 200ms ease;opacity:1}
             </p>
             <div id="pub-card-container" class="activated hide">
                 <!-- Pending: implicit state estimation, brainteaser, lifelong learning and abstraction, STACK -->
+               
+                <div class="pub-card" data-topic="adaptation" data-year="2025" data-selected="true">
+                    <div class="row">
+                        <div class="col-l col-xs-12 col-lg-3">
+                            <img src="data/shibo_projects/superodom.png" controls muted style="width:100%; margin:0 auto;"></img>
+                        </div>
+                        <div class="col-r col-xs-12 col-lg-9">
+                        <div class="pub-card-body ">
+                            <h5 class="title">SuperOdom2.0: Resilient Odometry via Hierarchical Adaptation </h5>
+                            <h6 class="authors">
+                                <u>Shibo Zhao</u>,
+                                <a target="_blank" href="">Sifan Zhou</a>,
+                                <a target="_blank" href="">Yuchen Zhang</a>,
+                                <a target="_blank" href="">Ji Zhang</a>,
+                                <a target="_blank" href="">Chen Wang</a>,
+                                <a target="_blank" href="">Wenshan Wang</a>,
+                                <a target="_blank" href="">Sebastian Scherer</a>
+                            </h6>
+                            <p class="info">
+                            <a target="_blank" href="https://www.science.org/journal/scirobotics" class="conference">Science Robotics 2025</a>
+                            <a target="_blank" href="https://www.science.org/stoken/author-tokens/ST-3125/full">Paper</a> /
+                            <a target="_blank" href="https://youtu.be/xpRZGgGaFRA">Video</a> /
+                            <a target="_blank" href="superodometry.com">Website</a> 
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                
+                
+                
                 <div class="pub-card" data-topic="foundation-models" data-year="2025" data-selected="true">
                     <div class="row">
                         <div class="col-l col-xs-12 col-lg-3">
@@ -903,34 +934,6 @@ section.overview .thin ul.content{transition:opacity 200ms ease;opacity:1}
                         </div>
                     </div>
                     </div>
-
-                    <div class="pub-card" data-topic="adaptation" data-year="2025" data-selected="true">
-                        <div class="row">
-                            <div class="col-l col-xs-12 col-lg-3">
-                                <img src="data/shibo_projects/superodom.png" controls muted style="width:100%; margin:0 auto;"></img>
-                            </div>
-                            <div class="col-r col-xs-12 col-lg-9">
-                            <div class="pub-card-body ">
-                                <h5 class="title">SuperOdom2.0: Hierarchical Adaptation Enables Robust Odometry Towards
-                                    All-degraded Environments </h5>
-                                <h6 class="authors">
-                                    <u>Shibo Zhao</u>,
-                                    <a target="_blank" href="">Sifan Zhou</a>,
-                                    <a target="_blank" href="">Yuchen Zhang</a>,
-                                    <a target="_blank" href="">Ji Zhang</a>,
-                                    <a target="_blank" href="">Chen Wang</a>,
-                                    <a target="_blank" href="">Wenshan Wang</a>,
-                                    <a target="_blank" href="">Sebastian Scherer</a>
-                                </h6>
-                                <p class="info">
-                                <a target="_blank" href="https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra" class="conference">Under Review</a>
-                                <a target="_blank" href="https://www.youtube.com/watch?v=8GMSLLNDnvs&list=PLosI3Br8CWkZlTRC8uIjTPo8onkRgswFe&t=1s">Video</a> 
-                             
-                                </p>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
 
                         <div class="pub-card" data-topic="scene-understanding" data-year="2025" data-selected="true">
                             <div class="row">
